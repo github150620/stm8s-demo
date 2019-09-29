@@ -99,11 +99,67 @@
 #define SPI_TXCRCR  *(unsigned char*)0x5207
 
 // I2C
+#define I2C_CR1    *(unsigned char*)0x5210
+#define I2C_CR2    *(unsigned char*)0x5211
+#define I2C_FREQR  *(unsigned char*)0x5212
+#define I2C_OARL   *(unsigned char*)0x5213
+#define I2C_OARH   *(unsigned char*)0x5214
+#define I2C_DR     *(unsigned char*)0x5216
+#define I2C_SR1    *(unsigned char*)0x5217
+#define I2C_SR2    *(unsigned char*)0x5218
+#define I2C_SR3    *(unsigned char*)0x5219
+#define I2C_ITR    *(unsigned char*)0x521A
+#define I2C_CCRL   *(unsigned char*)0x521B
+#define I2C_CCRH   *(unsigned char*)0x521C
+#define I2C_TRISER *(unsigned char*)0x521D
+#define I2C_PECR   *(unsigned char*)0x521E
 
 // UART1
+#define UART_SR   *(unsigned char*)0x5230
+#define UART_DR   *(unsigned char*)0x5231
+#define UART_BRR1 *(unsigned char*)0x5232
+#define UART_BRR2 *(unsigned char*)0x5233
+#define UART_CR1  *(unsigned char*)0x5234
+#define UART_CR2  *(unsigned char*)0x5235
+#define UART_CR3  *(unsigned char*)0x5236
+#define UART_CR4  *(unsigned char*)0x5237
+#define UART_CR5  *(unsigned char*)0x5238
+#define UART_GTR  *(unsigned char*)0x5239
+#define UART_PSCR *(unsigned char*)0x523A
 
 // TIM1
-
+#define TIM1_CR1    *(unsigend char*)0x5250
+#define TIM1_CR2    *(unsigend char*)0x5251
+#define TIM1_SMCR1  *(unsigend char*)0x5252
+#define TIM1_ETR    *(unsigend char*)0x5253
+#define TIM1_IER    *(unsigend char*)0x5254
+#define TIM1_SR1    *(unsigend char*)0x5255
+#define TIM1_SR2    *(unsigend char*)0x5256
+#define TIM1_EGR    *(unsigend char*)0x5257
+#define TIM1_CCMR1  *(unsigend char*)0x5258
+#define TIM1_CCMR2  *(unsigend char*)0x5259
+#define TIM1_CCMR3  *(unsigend char*)0x525A
+#define TIM1_CCMR4  *(unsigend char*)0x525B
+#define TIM1_CCER1  *(unsigend char*)0x525C
+#define TIM1_CCER2  *(unsigend char*)0x525D
+#define TIM1_CNTRH  *(unsigend char*)0x525E
+#define TIM1_CNTRL  *(unsigend char*)0x525F
+#define TIM1_PSCRH  *(unsigend char*)0x5260
+#define TIM1_PSCRL  *(unsigend char*)0x5261
+#define TIM1_ARRH   *(unsigend char*)0x5262
+#define TIM1_ARRL   *(unsigend char*)0x5263
+#define TIM1_CCR1H  *(unsigend char*)0x5264
+#define TIM1_CCR1L  *(unsigend char*)0x5265
+#define TIM1_CCR2H  *(unsigend char*)0x5266
+#define TIM1_CCR2L  *(unsigend char*)0x5267
+#define TIM1_CR1    *(unsigend char*)0x5268
+#define TIM1_CR1    *(unsigend char*)0x5269
+#define TIM1_CR1    *(unsigend char*)0x526A
+#define TIM1_CR1    *(unsigend char*)0x526B
+#define TIM1_CR1    *(unsigend char*)0x526C
+#define TIM1_CR1    *(unsigend char*)0x526D
+#define TIM1_CR1    *(unsigend char*)0x526E
+#define TIM1_CR1    *(unsigend char*)0x526F
 
 // TIM2
 
