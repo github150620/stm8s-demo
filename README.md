@@ -1,2 +1,2 @@
-# stm8s-demo
-STM8S Demo Project
+# STM8S Example
+STM8S Example Project
