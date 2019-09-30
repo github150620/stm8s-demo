@@ -18,11 +18,11 @@
 #define PB_CR2 *(unsigned char*)0x5009
 
 // Port C
-#define PC_ODR *(unsigned char*)0x500A
-#define PC_IDR *(unsigned char*)0x500B
-#define PC_DDR *(unsigned char*)0x500C
-#define PC_CR1 *(unsigned char*)0x500D
-#define PC_CR2 *(unsigned char*)0x500E
+#define PC_ODR *(unsigned char*)0x500A // data output latch register
+#define PC_IDR *(unsigned char*)0x500B // input pin value register
+#define PC_DDR *(unsigned char*)0x500C // data direction register
+#define PC_CR1 *(unsigned char*)0x500D // control register 1
+#define PC_CR2 *(unsigned char*)0x500E // control register 2
 
 // Port D
 #define PD_ODR *(unsigned char*)0x500F
@@ -211,15 +211,15 @@
 /* ---- Reserved area(43 byte) ---- */
 
 // TIM4
-#define TIM4_CR1    *(unsigned char*)0x5340
+#define TIM4_CR1    *(unsigned char*)0x5340 // control register
 //#define REVERSED  *(unsigned char*)0x5401
 //#define REVERSED  *(unsigned char*)0x5402
-#define TIM4_IER    *(unsigned char*)0x5343
-#define TIM4_SR     *(unsigned char*)0x5344
-#define TIM4_EGR    *(unsigned char*)0x5345
-#define TIM4_CNTR   *(unsigned char*)0x5346
-#define TIM4_PSCR   *(unsigned char*)0x5347
-#define TIM4_ARR    *(unsigned char*)0x5348
+#define TIM4_IER    *(unsigned char*)0x5343 // interrupt enable register
+#define TIM4_SR     *(unsigned char*)0x5344 // status register 
+#define TIM4_EGR    *(unsigned char*)0x5345 // event generation register
+#define TIM4_CNTR   *(unsigned char*)0x5346 // counter
+#define TIM4_PSCR   *(unsigned char*)0x5347 // prescaler register
+#define TIM4_ARR    *(unsigned char*)0x5348 // auto-reload register
 /* ---- Reserved area(153 byte) ---- */
 
 // ADC1
@@ -293,3 +293,17 @@
 #define DM_CSR2   *(unsigned char*)0x7F99
 #define DM_ENFCTR *(unsigned char*)0x7F9A
 /* ---- Reserved area(5 byte) ---- */
+
+// TIM4 register mask
+#define TIM4_CR1_CEN  0x01 // Counter Enable mask
+#define TIM4_CR1_UDIS 0x02 // Update Disable mask
+#define TIM4_CR1_URS  0x04 // Update Request Source mask
+#define TIM4_CR1_OPM  0x08 // One Pulse Mode mask
+#define TIM4_CR1_APRE 0x80 // Auto-Reload Preload Enable mask
+#define TIM4_IER_UIE  0x01 // Update Interrupt Enable mask
+#define TIM4_SR1_UIF  0x01 // Update Interrupt Flag mask
+#define TIM4_EGR_UG   0x01 // Update Generation mask
+#define TIM4_CNTR_CNT 0xFF // Counter Value mask
+#define TIM4_PSCR_PSC 0x07 // Prescaler Value mask
+#define TIM4_ARR_ARR  0xFF // Autoreload Value mask
+
