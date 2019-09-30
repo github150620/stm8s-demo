@@ -294,6 +294,58 @@
 #define DM_ENFCTR *(unsigned char*)0x7F9A
 /* ---- Reserved area(5 byte) ---- */
 
+// UART register mask
+#define UART1_SR_TXE    0x80 // Transmit Data Register Empty mask 
+#define UART1_SR_TC     0x40 // Transmission Complete mask
+#define UART1_SR_RXNE   0x20 // Read Data Register Not Empty mask
+#define UART1_SR_IDLE   0x10 // IDLE line detected mask
+#define UART1_SR_OR     0x08 // OverRun error mask
+#define UART1_SR_NF     0x04 // Noise Flag mask
+#define UART1_SR_FE     0x02 // Framing Error mask
+#define UART1_SR_PE     0x01 // Parity Error mask
+
+#define UART1_BRR1_DIVM 0xFF // LSB mantissa of UART1DIV [7:0] mask
+
+#define UART1_BRR2_DIVM 0xF0 // MSB mantissa of UART1DIV [11:8] mask
+#define UART1_BRR2_DIVF 0x0F // Fraction bits of UART1DIV [3:0] mask
+
+#define UART1_CR1_R8    0x80 // Receive Data bit 8 */
+#define UART1_CR1_T8    0x40 // Transmit data bit 8 */
+#define UART1_CR1_UARTD 0x20 // UART1 Disable (for low power consumption) */
+#define UART1_CR1_M     0x10 // Word length mask
+#define UART1_CR1_WAKE  0x08 // Wake-up method mask
+#define UART1_CR1_PCEN  0x04 // Parity Control Enable mask
+#define UART1_CR1_PS    0x02 // UART1 Parity Selection */
+#define UART1_CR1_PIEN  0x01 // UART1 Parity Interrupt Enable mask
+
+#define UART1_CR2_TIEN  0x80 // Transmitter Interrupt Enable mask
+#define UART1_CR2_TCIEN 0x40 // Transmission Complete Interrupt Enable mask
+#define UART1_CR2_RIEN  0x20 // Receiver Interrupt Enable mask
+#define UART1_CR2_ILIEN 0x10 // IDLE Line Interrupt Enable mask
+#define UART1_CR2_TEN   0x08 // Transmitter Enable mask
+#define UART1_CR2_REN   0x04 // Receiver Enable mask
+#define UART1_CR2_RWU   0x02 // Receiver Wake-Up mask
+#define UART1_CR2_SBK   0x01 // Send Break mask
+
+#define UART1_CR3_LINEN 0x40 // Alternate Function output mask
+#define UART1_CR3_STOP  0x30 // STOP bits [1:0] mask
+#define UART1_CR3_CKEN  0x08 // Clock Enable mask
+#define UART1_CR3_CPOL  0x04 // Clock Polarity mask
+#define UART1_CR3_CPHA  0x02 // Clock Phase mask
+#define UART1_CR3_LBCL  0x01 // Last Bit Clock pulse mask
+
+#define UART1_CR4_LBDIEN 0x40 // LIN Break Detection Interrupt Enable mask
+#define UART1_CR4_LBDL   0x20 // LIN Break Detection Length mask
+#define UART1_CR4_LBDF   0x10 // LIN Break Detection Flag mask
+#define UART1_CR4_ADD    0x0F // Address of the UART1 node mask
+
+#define UART1_CR5_SCEN  0x20 // Smart Card Enable mask
+#define UART1_CR5_NACK  0x10 // Smart Card Nack Enable mask
+#define UART1_CR5_HDSEL 0x08 // Half-Duplex Selection mask
+#define UART1_CR5_IRLP  0x04 // Irda Low Power Selection mask
+#define UART1_CR5_IREN  0x02 // Irda Enable mask
+
+
 // TIM4 register mask
 #define TIM4_CR1_CEN  0x01 // Counter Enable mask
 #define TIM4_CR1_UDIS 0x02 // Update Disable mask

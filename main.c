@@ -10,6 +10,17 @@
 	PB_ODR ^= 1<<5;
 }
 
+@far @interrupt void UART1_RCV_IRQHandler(void)
+{
+	unsigned char u;
+	u = UART1_DR;
+	if (u == 'A') {
+		PB_ODR &= ~0x20;
+	} else {
+		PB_ODR |= 0x20;
+	}
+}
+
 @far @interrupt void TIM4_UPD_OVF_IRQHandler(void)
 {
 	static int cnt = -1;
@@ -36,19 +47,33 @@ void GPIO_init(void)
 	PB_ODR |= 0x20; // high level
 }
 
+void UART1_init(void)
+{
+	// baud = 9600
+	// 2MHz / 9600 = 208, 0x00D0
+	UART1_BRR2 = 0x00; // Must write BRR2 first. Why?
+	UART1_BRR1 = 0x0d;
+	
+	// Enable Receiver Interrupt  0x20
+	// Enable TX                  0x08
+	// Enable RX                  0x04
+	UART1_CR2 = 0x2c; 
+}
+
 void TIM4_init(void)
 {
 	TIM4_PSCR = 7;   // 2M/2^7 = 15.625K, 16.625KHz = 0.064ms
 	TIM4_ARR  = 255; // 255 * 0.064ms = 16.32ms
 	TIM4_CNTR = 255;
 
-	TIM4_IER  |= TIM4_IER_UIE;  
-	TIM4_CR1  |= TIM4_CR1_APRE;  
+	TIM4_IER  |= TIM4_IER_UIE;
+	TIM4_CR1  |= TIM4_CR1_APRE;
 }
 
 main()
 {
 	GPIO_init();
+	UART1_init();
 	TIM4_init();
 
 	_asm("rim");
