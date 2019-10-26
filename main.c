@@ -61,7 +61,7 @@ void UART1_init(void)
 
 void TIM4_init(void)
 {
-	TIM4_PSCR = 7;   // 2M/2^7 = 15.625K, 16.625KHz = 0.064ms
+	TIM4_PSCR = 7;   // 2M/2^7 = 15.625K, 15.625KHz = 0.064ms
 	TIM4_ARR  = 255; // 255 * 0.064ms = 16.32ms
 	TIM4_CNTR = 255;
 
