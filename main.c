@@ -56,7 +56,7 @@ void UART1_init(void)
 	// Enable Receiver Interrupt  0x20
 	// Enable TX                  0x08
 	// Enable RX                  0x04
-	UART1_CR2 = 0x2c; 
+	UART1_CR2 = 0x20 | 0x80 | 0x04; 
 }
 
 void TIM4_init(void)
